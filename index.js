@@ -11,11 +11,11 @@ require("dotenv").config();
 const testRoute = require("./routes/test");
 const authRoute = require("./routes/authRoute");
 const resetPasswordRoute = require("./routes/resetPassword");
-const updateProfileRoute = require("./routes/updateProfile");
+
 
 //import configuration function
 const { dbConnect } = require("./config/Database");
-const { cloudnairyconnect } = require("./config/Cloudinary");
+
 
 const PORT = process.env.PORT || 8800;
 
@@ -43,7 +43,7 @@ app.use(
 app.use("/api/v1", testRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/user", resetPasswordRoute);
-app.use("/api/v1/profile", updateProfileRoute);
+
 
 //server listen
 app.listen(PORT, () => {
@@ -53,5 +53,4 @@ app.listen(PORT, () => {
 //db connect
 dbConnect();
 
-//cloudinary connect
-cloudnairyconnect();
+
